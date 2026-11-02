@@ -14,10 +14,10 @@ class RootWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Test',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black54),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
         brightness: Brightness.dark,
       ),
-      home: MyHomePage(),
+      home: HomePage(),
     );
   }
 }
