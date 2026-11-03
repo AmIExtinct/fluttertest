@@ -31,6 +31,7 @@ class ProfileBuild extends StatelessWidget{
             body: ListTile(
             title: const Text("Something"),
             leading: const Text("Will Appear?"),
+            trailing: const Text("Is This Something?"),
             ),
              
          );
