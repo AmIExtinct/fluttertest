@@ -130,6 +130,9 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
       - name: Download platform packages
         uses: actions/download-artifact@v4
         with:
@@ -142,3 +145,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ needs.version.outputs.tag }}
         run: gh release create "$TAG" release-assets/* --title "$TAG" --generate-notes --target "$GITHUB_SHA"
+
