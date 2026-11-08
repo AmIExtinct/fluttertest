@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hey/ui/account/starter.dart';
-import 'package:hey/ui/data/login.dart' as account;
+import 'package:hey/ui/home/home.dart';
 
 void main() {
   runApp(const RootWidget());
@@ -23,15 +22,7 @@ class RootWidget extends StatelessWidget {
          primarySwatch: Colors.indigo,
       ),
       themeMode: ThemeMode.system,
-      home: ValueListenableBuilder(valueListenable: account.isLoggedIn, builder: (context, value, child){
-        if(account.isLoggedIn.value){
-          return Container(); // Show If User Is Logged In
-        }
-        if(!account.isLoggedIn.value){
-          return LoginPage();
-        }
-        return const Text("Some Strange Error ..");
-      }),
+      home: HomePage(),
     );
   }
 }
