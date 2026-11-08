@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hey/data/login.dart' as Account;
+import 'package:hey/data/data.dart' as Account;
 import 'package:hey/ui/account/account.dart';
 
 class HomePage extends StatelessWidget {
