@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hey/data/data.dart';
+import 'package:hey/ui/settings/settings.dart';
 
 class AccountPageAppBar extends StatelessWidget {
   @override
@@ -9,13 +10,16 @@ class AccountPageAppBar extends StatelessWidget {
       title: const Text("Boo"),
 
       actions: [
-         IconButton(onPressed: _onSettingsPressed, icon: Icon(Icons.settings))
+         IconButton(onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) { return SettingsPage(); }));
+         }, 
+         icon: Icon(Icons.settings))
       ],
     );
   }
 
 
-  static void _onSettingsPressed(){ IsCurrentPage.settings = !IsCurrentPage.settings; }
+  
 }
 
 
@@ -38,18 +42,19 @@ class _AccountPageBodyState extends State<AccountPageBody> {
       height: double.infinity,
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(decoration: const InputDecoration(hintText: "Your Username ...", suffixIcon: const Icon(Icons.person_2_outlined)),
+            TextField(decoration: const InputDecoration(hintText: "Your Username ...", suffixIcon:  Icon(Icons.person_2_outlined)),
             maxLength: 100,
             maxLines: 1,
             onChanged: (String? value){},
             ),
-            TextField(decoration: const InputDecoration(hintText: "Your Password ...", suffixIcon: const Icon(Icons.password_outlined)),
+            TextField(decoration: const InputDecoration(hintText: "Your Password ...", suffixIcon:  Icon(Icons.password_outlined)),
             maxLength: 256,
             maxLines: 1,
             onChanged: (String? value) {},
             ),
-            TextField(decoration: const InputDecoration(hintText: "Your Email ...", suffixIcon: const Icon(Icons.email_rounded)),
+            TextField(decoration: const InputDecoration(hintText: "Your Email ...", suffixIcon:  Icon(Icons.email_rounded)),
             maxLength: 300,
             maxLines: 1,
             onChanged: (String? value){},
