@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hey/ui/login/starter.dart';
+import 'package:hey/ui/account/starter.dart';
 import 'package:hey/ui/data/login.dart' as account;
 
 void main() {
@@ -30,7 +30,7 @@ class RootWidget extends StatelessWidget {
         if(!account.isLoggedIn.value){
           return LoginPage();
         }
-        return const Text("Invalid .. Thats it..");
+        return const Text("Some Strange Error ..");
       }),
     );
   }
