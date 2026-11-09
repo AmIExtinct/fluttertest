@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: PreferredSize(preferredSize: Size.fromHeight(kToolbarHeight), child: AccountPageAppBar()),
         body: ValueListenableBuilder(valueListenable: Account.isLoggedIn, 
         builder: (context, value, child){
           if(value == false) { return AccountPageBody(); }
