@@ -16,12 +16,12 @@ class RootWidget extends StatelessWidget {
         primarySwatch: Colors.grey,
         brightness: Brightness.light,
       ),
-
+      
       darkTheme: ThemeData(
          brightness: Brightness.dark,
          primarySwatch: Colors.indigo,
       ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       home: HomePage(),
     );
   }

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hey/data/data.dart';
+import 'package:hey/ui/settings/settingsoptions.dart';
 
 class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(preferredSize: Size.fromHeight(kToolbarHeight), child: SettingsPageAppBar()),
+      body: SettingsRootPageBody(),
     );
   }
 }
@@ -40,19 +43,22 @@ class _SettingsPageAppBarState extends State<SettingsPageAppBar> {
   static void changeTheme() {}
 }
 
-class SettingsPageBody extends StatelessWidget {
-  const SettingsPageBody({super.key});
+class SettingsRootPageBody extends StatelessWidget {
+  const SettingsRootPageBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
+
       child: ListView.builder(
-        itemCount: Settings.mainPageOptions.length,
+        itemCount: Settings.settingsRootPageOptions.length,
         itemBuilder: (BuildContext context, int itemIndex){
-           String item = Settings.mainPageOptions[itemIndex];
+           String item = Settings.settingsRootPageOptions[itemIndex];
 
           return ListTile(
             title:  TextButton(onPressed: (){}, child: Text(item)),
+            
           );
         },
       ),

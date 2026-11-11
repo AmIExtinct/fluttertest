@@ -1,11 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-ValueNotifier<bool> isLoggedIn = ValueNotifier(false);
-
-class Settings {
-  Settings._();
-
-  static const List<String> mainPageOptions = ["General", "Appearance"];
-
-  static const Map<String, Function> mainPageOptionsHandler = {}; // List or Map of Functions for handling Each Setting Option
+class Status {
+  static ValueNotifier<bool> isLoggedIn = ValueNotifier(false);
+  static ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.system);
 }

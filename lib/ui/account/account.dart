@@ -3,6 +3,8 @@ import 'package:hey/data/data.dart';
 import 'package:hey/ui/settings/settings.dart';
 
 class AccountPageAppBar extends StatelessWidget {
+  const AccountPageAppBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -52,6 +54,7 @@ class _AccountPageBodyState extends State<AccountPageBody> {
             TextField(decoration: const InputDecoration(hintText: "Your Password ...", suffixIcon:  Icon(Icons.password_outlined)),
             maxLength: 256,
             maxLines: 1,
+            obscureText: true,
             onChanged: (String? value) {},
             ),
             TextField(decoration: const InputDecoration(hintText: "Your Email ...", suffixIcon:  Icon(Icons.email_rounded)),
