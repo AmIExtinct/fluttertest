@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hey/ui/settings/general/general.dart';
+import 'package:hey/ui/settings/profile/profile.dart';
 
 class Settings {
   Settings._();
 
-  static const List<String> settingsRootPageOptions = ["Profile" ,"General", "Appearance", "Privacy"];
+  static const List<String> settingsRootPageOptions = ["Profile" ,"General"];
 
-  static const Map<String, Function> settingsRootPageOptionsHandler = {}; // List or Map of Functions for handling Each Setting Option
+  static  Map<String, WidgetBuilder> settingsRootPageOptionsHandler = {
+    "Profile": (context) => ProfileMainPage(),
+    "General": (context) => GeneralPage()
+
+  }; // List or Map of Functions for handling Each Setting Option
 }
 
 class SettingsGeneralPage extends StatelessWidget {

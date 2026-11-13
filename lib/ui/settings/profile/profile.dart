@@ -33,6 +33,9 @@ class _ProfileMainPageBody extends State<ProfileMainPageBody> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const IconButton(onPressed: Profile.ProfileIconButtonHandler, icon: Icon(Icons.person)),
+            const TextField(decoration: InputDecoration(hintText: "Your Name ..."),
+              maxLines: 1, maxLength: 55,
+            )
           ],
         )
       ),

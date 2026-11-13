@@ -55,13 +55,19 @@ class SettingsRootPageBody extends StatelessWidget {
         itemCount: Settings.settingsRootPageOptions.length,
         itemBuilder: (BuildContext context, int itemIndex){
            String item = Settings.settingsRootPageOptions[itemIndex];
-
+           WidgetBuilder? widgetMaker = Settings.settingsRootPageOptionsHandler[item];
           return ListTile(
-            title:  TextButton(onPressed: (){}, child: Text(item)),
+            title:  TextButton(child: Text(item),
+            onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: widgetMaker!));
+              },
+            ),
             
           );
         },
       ),
     );
   }
+
+  
 }

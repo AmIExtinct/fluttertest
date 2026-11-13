@@ -12,30 +12,35 @@ class AccountPageAppBar extends StatelessWidget {
       title: const Text("Boo"),
 
       actions: [
-         IconButton(onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) { return SettingsPage(); }));
-         }, 
-         icon: Icon(Icons.settings))
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return SettingsPage();
+                },
+              ),
+            );
+          },
+          icon: Icon(Icons.settings),
+        ),
       ],
     );
   }
-
-
-  
 }
-
 
 class AccountPageBody extends StatefulWidget {
   const AccountPageBody({super.key});
 
   @override
-  State<AccountPageBody> createState() => _AccountPageBodyState(); 
+  State<AccountPageBody> createState() => _AccountPageBodyState();
 }
 
 class _AccountPageBodyState extends State<AccountPageBody> {
   @override
   void dispose() {
-      super.dispose();
+    super.dispose();
   }
 
   @override
@@ -46,25 +51,40 @@ class _AccountPageBodyState extends State<AccountPageBody> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(decoration: const InputDecoration(hintText: "Your Username ...", suffixIcon:  Icon(Icons.person_2_outlined)),
-            maxLength: 100,
-            maxLines: 1,
-            onChanged: (String? value){},
+            TextField(
+              decoration: const InputDecoration(
+                hintText: "Your Username ...",
+                suffixIcon: Icon(Icons.person_2_outlined),
+              ),
+              maxLength: 100,
+              maxLines: 1,
+              onChanged: (String? value) {},
             ),
-            TextField(decoration: const InputDecoration(hintText: "Your Password ...", suffixIcon:  Icon(Icons.password_outlined)),
-            maxLength: 256,
-            maxLines: 1,
-            obscureText: true,
-            onChanged: (String? value) {},
+            TextField(
+              decoration: const InputDecoration(
+                hintText: "Your Password ...",
+                suffixIcon: Icon(Icons.password_outlined),
+              ),
+              maxLength: 256,
+              maxLines: 1,
+              obscureText: true,
+              onChanged: (String? value) {},
             ),
-            TextField(decoration: const InputDecoration(hintText: "Your Email ...", suffixIcon:  Icon(Icons.email_rounded)),
-            maxLength: 300,
-            maxLines: 1,
-            onChanged: (String? value){},
+            TextField(
+              decoration: const InputDecoration(
+                hintText: "Your Email ...",
+                suffixIcon: Icon(Icons.email_rounded),
+              ),
+              maxLength: 300,
+              maxLines: 1,
+              onChanged: (String? value) {},
             ),
 
-            TextButton(onPressed: (){}, child: const Text("Create An Account ...")),
-            TextButton(onPressed: (){}, child: const Text("Login Instead"))
+            TextButton(
+              onPressed: () {},
+              child: const Text("Create An Account ..."),
+            ),
+            TextButton(onPressed: () {}, child: const Text("Login Instead")),
           ],
         ),
       ),
