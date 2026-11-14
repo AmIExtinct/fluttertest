@@ -7,12 +7,14 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(preferredSize: Size.fromHeight(kToolbarHeight), child: SettingsPageAppBar()),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: SettingsPageAppBar(),
+      ),
       body: SettingsRootPageBody(),
     );
   }
 }
-
 
 class SettingsPageAppBar extends StatefulWidget {
   const SettingsPageAppBar({super.key});
@@ -34,11 +36,10 @@ class _SettingsPageAppBarState extends State<SettingsPageAppBar> {
       centerTitle: true,
 
       actions: [
-        IconButton(onPressed: changeTheme, icon: Icon(Icons.light_mode))
+        IconButton(onPressed: changeTheme, icon: Icon(Icons.light_mode)),
       ],
     );
   }
-
 
   static void changeTheme() {}
 }
@@ -53,21 +54,23 @@ class SettingsRootPageBody extends StatelessWidget {
 
       child: ListView.builder(
         itemCount: Settings.settingsRootPageOptions.length,
-        itemBuilder: (BuildContext context, int itemIndex){
-           String item = Settings.settingsRootPageOptions[itemIndex];
-           WidgetBuilder? widgetMaker = Settings.settingsRootPageOptionsHandler[item];
+        itemBuilder: (BuildContext context, int itemIndex) {
+          String item = Settings.settingsRootPageOptions[itemIndex];
+          WidgetBuilder? widgetMaker =
+              Settings.settingsRootPageOptionsHandler[item];
           return ListTile(
-            title:  TextButton(child: Text(item),
-            onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: widgetMaker!));
+            title: TextButton(
+              child: Text(item),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: widgetMaker!),
+                );
               },
             ),
-            
           );
         },
       ),
     );
   }
-
-  
 }

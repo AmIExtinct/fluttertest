@@ -8,21 +8,34 @@ class ProfileMainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: ProfileMainAppBar(),
+      ),
       body: ProfileMainPageBody(),
     );
   }
 }
 
+class ProfileMainAppBar extends StatelessWidget {
+  const ProfileMainAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return AppBar(title: const Text("Profile"), centerTitle: true);
+  }
+}
 
 class ProfileMainPageBody extends StatefulWidget {
   const ProfileMainPageBody({super.key});
 
   @override
-  State<ProfileMainPageBody> createState() => _ProfileMainPageBody(); 
+  State<ProfileMainPageBody> createState() => _ProfileMainPageBody();
 }
 
 class _ProfileMainPageBody extends State<ProfileMainPageBody> {
-   @override
+  @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
@@ -32,12 +45,17 @@ class _ProfileMainPageBody extends State<ProfileMainPageBody> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const IconButton(onPressed: Profile.ProfileIconButtonHandler, icon: Icon(Icons.person)),
-            const TextField(decoration: InputDecoration(hintText: "Your Name ..."),
-              maxLines: 1, maxLength: 55,
-            )
+            const IconButton(
+              onPressed: Profile.ProfileIconButtonHandler,
+              icon: Icon(Icons.person),
+            ),
+            const TextField(
+              decoration: InputDecoration(hintText: "Your Name ..."),
+              maxLines: 1,
+              maxLength: 55,
+            ),
           ],
-        )
+        ),
       ),
     );
   }
