@@ -2,6 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:hey/data/data.dart';
 import 'package:hey/ui/settings/settings.dart';
 
+class AccountPage extends StatelessWidget {
+  const AccountPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: AccountPageAppBar(),
+      ),
+      body: AccountPageBody(),
+    );
+  }
+}
+
 class AccountPageAppBar extends StatelessWidget {
   const AccountPageAppBar({super.key});
 

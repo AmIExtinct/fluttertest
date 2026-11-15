@@ -7,14 +7,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: PreferredSize(preferredSize: Size.fromHeight(kToolbarHeight), child: AccountPageAppBar()),
-        body: ValueListenableBuilder(valueListenable: Account.Status.isLoggedIn, 
-        builder: (context, value, child){
-          if(value == false) { return AccountPageBody(); }
-          
-          return const Text("Something Probably Went Wrong ...");
-        }),
+    return ValueListenableBuilder(
+      valueListenable: Account.Status.isLoggedIn,
+      builder: (BuildContext context, bool value, Widget? child) {
+        if (value) {
+          return AccountPage();
+        } else {
+          // Yet to be implemented
+        }
+
+        return const Text(
+          "Something Probably Isn't Right ?",
+          style: TextStyle(backgroundColor: Colors.red),
+        );
+      },
     );
   }
 }
