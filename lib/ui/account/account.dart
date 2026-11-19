@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hey/data/data.dart';
 import 'package:hey/ui/settings/settings.dart';
 
 class AccountPage extends StatelessWidget {

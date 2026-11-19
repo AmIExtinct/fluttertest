@@ -6,3 +6,11 @@ class Status {
     ThemeMode.system,
   );
 }
+
+class Data {
+  static const List<Map<String, dynamic>> ofPeople = [
+    {"Profile": Null, "Name": "Cutie Pie", "Description": "Shiba Inu"},
+  ];
+
+  static List getPeopleList() => ofPeople;
+}

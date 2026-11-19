@@ -59,18 +59,20 @@ class SettingsRootPageBody extends StatelessWidget {
           WidgetBuilder? widgetMaker =
               Settings.settingsRootPageOptionsHandler[item];
           return ListTile(
-            title: TextButton(
-              child: Text(item),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: widgetMaker!),
-                );
-              },
-            ),
+            // title: TextButton(
+            //   child: Text(item),
+            //   onPressed: () {
+            //   },
+            // ), -- Delete The Commented Block After Testing Everything Works
+            title: Text(item),
+            onTap: () => onSettingsRootOptionTapped(context, widgetMaker!),
           );
         },
       ),
     );
+  }
+
+  static void onSettingsRootOptionTapped(BuildContext context, WidgetBuilder widgetMaker,) {
+    Navigator.push(context, MaterialPageRoute(builder: widgetMaker));
   }
 }
