@@ -12,6 +12,7 @@ class PrimaryPage extends StatelessWidget {
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: PrimaryPageAppBar(),
       ),
+      body: PrimaryPageBody(),
     );
   }
 }
