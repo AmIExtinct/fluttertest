@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hey/data/data.dart';
+import 'package:hey/ui/ROC/chatScreen/mainChatScreen.dart';
 
 class PrimaryPage extends StatelessWidget {
   const PrimaryPage({super.key});
@@ -49,14 +50,16 @@ class PrimaryPageBody extends StatelessWidget {
           return ListTile(
             title: Text(person['Name']),
             subtitle: Text(person['Description']),
-            onTap: () => onPersonTileTapped(context),
+            onTap: () => onPersonTileTapped(context, person['Name']),
           );
         },
       ),
     );
   }
 
-  static void onPersonTileTapped(BuildContext context){
-    
+  static void onPersonTileTapped(BuildContext context, String connectionName){
+    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MainChatScreen(name: connectionName))
+    );
   }
+
 }

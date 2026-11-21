@@ -8,8 +8,8 @@ class Settings {
   static const List<String> settingsRootPageOptions = ["Profile" ,"General"];
 
   static  Map<String, WidgetBuilder> settingsRootPageOptionsHandler = {
-    "Profile": (context) => ProfileMainPage(),
-    "General": (context) => GeneralPage()
+    "Profile": (BuildContext context) => ProfileMainPage(),
+    "General": (BuildContext context) => GeneralPage()
 
   }; // List or Map of Functions for handling Each Setting Option
 }
